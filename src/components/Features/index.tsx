@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FeatureIcon } from "../../icons";
+import { ImageUploadIcon } from "../../icons";
 
 const Features = () => {
   const features = [
@@ -31,7 +31,7 @@ const Features = () => {
       title: "Instant Preview",
       description:
         "See your room transformation in seconds. No waiting, no complicated software - just upload and preview.",
-      image: "/images/feature-1.png",
+      image: "/images/feature-2.png",
     },
   ];
 
@@ -67,7 +67,7 @@ const Features = () => {
               </div>
               <div className="flex-1 flex flex-col gap-6">
                 <div className="bg-white/10 border border-white/20 rounded-[20px] w-[60px] h-[60px] flex items-center justify-center">
-                  <FeatureIcon className="w-6 h-6 text-white" />
+                  <ImageUploadIcon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[28px] font-normal font-['Lexend'] text-white leading-[38px]">
@@ -82,7 +82,7 @@ const Features = () => {
 
             <div className="bg-white/10 border border-white/10 rounded-[24px] p-6 flex flex-col gap-6 w-[476px]">
               <div className="bg-white/10 border border-white/20 rounded-[20px] w-[60px] h-[60px] flex items-center justify-center">
-                <FeatureIcon className="w-6 h-6 text-white" />
+                <ImageUploadIcon className="w-6 h-6 text-white" />
               </div>
               <div className="flex flex-col gap-4">
                 <h3 className="text-[28px] font-normal font-['Lexend'] text-white leading-[38px]">
@@ -99,7 +99,7 @@ const Features = () => {
           <div className="flex gap-6">
             <div className="bg-white/10 border border-white/10 rounded-[24px] p-6 flex flex-col gap-6 w-[476px]">
               <div className="bg-white/10 border border-white/20 rounded-[20px] w-[60px] h-[60px] flex items-center justify-center">
-                <FeatureIcon className="w-6 h-6 text-white" />
+                <ImageUploadIcon className="w-6 h-6 text-white" />
               </div>
               <div className="flex flex-col gap-4">
                 <h3 className="text-[28px] font-normal font-['Lexend'] text-white leading-[38px]">
@@ -121,7 +121,7 @@ const Features = () => {
               </div>
               <div className="flex-1 flex flex-col gap-6">
                 <div className="bg-white/10 border border-white/20 rounded-[20px] w-[60px] h-[60px] flex items-center justify-center">
-                  <FeatureIcon className="w-6 h-6 text-white" />
+                  <ImageUploadIcon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex flex-col gap-4">
                   <h3 className="text-[28px] font-normal font-['Lexend'] text-white leading-[38px]">

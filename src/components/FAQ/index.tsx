@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { PlusIcon } from "../../icons";
+import { DropDownIcon } from "../../icons";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -85,7 +85,7 @@ const FAQ = () => {
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
-                  <PlusIcon
+                  <DropDownIcon
                     className={`w-5 h-5 text-white transition-transform duration-200 ${
                       openIndex === index ? "rotate-45" : ""
                     }`}

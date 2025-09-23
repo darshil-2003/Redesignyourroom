@@ -36,12 +36,9 @@ const Features = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-[140px] px-[222px] relative">
-      {/* Background Ray */}
-      <div
-        className="absolute -left-[100px] -top-[220px] w-[830px] h-[816px] bg-cover bg-no-repeat opacity-30"
-        style={{ backgroundImage: "url('/images/ray-bg-2.png')" }}
-      />
+    <section className="bg-[#000319] py-32 px-[222px] relative">
+      {/* Background Ray - Removed image, using gradient instead */}
+      <div className="absolute -left-[100px] -top-[220px] w-[830px] h-[816px] bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
 
       <div className="max-w-[1476px] mx-auto relative z-10">
         {/* Header */}

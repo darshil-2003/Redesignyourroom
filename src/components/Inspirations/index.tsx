@@ -67,7 +67,7 @@ const Inspirations = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-20">
+    <section className="bg-[#000319] py-32">
       {/* Header */}
       <div className="max-w-[1920px] mx-auto px-[222px] mb-20">
         <div className="text-center">
@@ -83,7 +83,7 @@ const Inspirations = () => {
       </div>
 
       {/* Full Width Flowing Image Gallery */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden max-w-full">
         {/* First Row - Left to Right */}
         <div className="flex animate-scroll-left mb-6">
           {/* All images + duplicates for seamless loop */}

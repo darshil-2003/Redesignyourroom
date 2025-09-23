@@ -32,19 +32,42 @@ const BeforeAfter = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-20">
-      <div className="max-w-[1920px] mx-auto px-4">
+    <section className="bg-[#000319] py-32">
+      <div className="max-w-[1920px] mx-auto px-[222px]">
+        {/* Header */}
+
         <div className="flex gap-6 items-center justify-center h-[320px] relative">
           {images.map((image, index) => (
             <div
               key={image.id}
               className="relative w-[400px] h-[320px] rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)]"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
+              {index === 2 ? (
+                // Split image for the third item (combining two images)
+                <div className="relative w-full h-full">
+                  <div className="absolute left-0 top-0 w-1/2 h-full">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute right-0 top-0 w-1/2 h-full">
+                    <img
+                      src={images[3]?.src || image.src}
+                      alt={images[3]?.alt || image.alt}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              ) : (
+                // Regular single image for all other images
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           ))}

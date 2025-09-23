@@ -26,7 +26,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-20 px-[222px]">
+    <section className="bg-[#000319] py-32 px-[222px]">
       <div className="max-w-[1476px] mx-auto">
         {/* Header */}
         <div className="text-center mb-20">

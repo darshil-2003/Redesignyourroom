@@ -54,12 +54,9 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#000319] py-[140px] px-[222px] relative">
-      {/* Background Ray */}
-      <div
-        className="absolute -right-[100px] -top-[100px] w-[830px] h-[816px] bg-cover bg-no-repeat opacity-30 transform scale-x-[-1]"
-        style={{ backgroundImage: "url('/images/ray-bg-2.png')" }}
-      />
+    <section className="bg-[#000319] py-32 px-[222px] relative">
+      {/* Background Ray - Removed image, using gradient instead */}
+      <div className="absolute -right-[100px] -top-[100px] w-[830px] h-[816px] bg-gradient-to-bl from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
 
       <div className="max-w-[800px] mx-auto relative z-10">
         {/* Header */}

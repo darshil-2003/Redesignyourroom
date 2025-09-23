@@ -5,7 +5,7 @@ import { LogoIcon } from "../../icons";
 
 const Header = () => {
   return (
-    <header className="backdrop-blur-[4.75px] bg-[rgba(7,6,16,0.2)] border-b border-[rgba(224,222,254,0)] px-[222px] py-[22px] w-full">
+    <header className="backdrop-blur-[4.75px] bg-[rgba(7,6,16,0.2)] border-b border-[rgba(224,222,254,0)] px-[222px] py-[22px] w-full max-w-full overflow-x-hidden">
       <div className="flex items-center justify-between max-w-[1920px] mx-auto">
         {/* Logo Section */}
         <div className="flex items-center gap-2">

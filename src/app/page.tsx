@@ -10,9 +10,9 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#000319]">
+    <div className="min-h-screen bg-[#000319] overflow-x-hidden">
       <Header />
-      <main>
+      <main className="space-y-5 overflow-x-hidden">
         <Hero />
         <BeforeAfter />
         <Reimagine />

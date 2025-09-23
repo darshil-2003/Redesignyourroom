@@ -12,7 +12,7 @@ const Reimagine = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-[140px] px-[222px]">
+    <section className="bg-[#000319] py-32 px-[222px]">
       <div className="max-w-[1476px] mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
@@ -57,21 +57,9 @@ const Reimagine = () => {
           </div>
 
           {/* Content */}
-          <div className="flex-1 max-w-[760px]">
-            {/* Progress Bar */}
-            <div className="w-full h-[2px] bg-white rounded-[100px] mb-[127px]">
-              <div className="w-[26.32%] h-full bg-[#3c95e7] rounded-[100px]" />
-            </div>
-
+          <div className="flex-1 max-w-[760px] mt-30">
             {/* Step Content */}
             <div className="flex flex-col gap-8">
-              {/* Step Number */}
-              <div className="bg-white/10 border border-black/10 rounded-[70px] px-5 py-2 w-fit">
-                <span className="text-white text-[18px] font-normal font-['Lexend']">
-                  01
-                </span>
-              </div>
-
               {/* Main Content */}
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-4">

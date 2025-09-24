@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { DropDownIcon } from "../../icons";
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openItems, setOpenItems] = useState<Set<number>>(new Set());
 
   const faqs = [
     {
@@ -50,7 +50,15 @@ const FAQ = () => {
   ];
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenItems((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -70,36 +78,59 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* FAQ Items */}
+        {/* FAQ Items with fixed height containers */}
         <div className="space-y-0">
           {faqs.map((faq, index) => (
             <div
               key={index}
               className="border-b border-[rgba(228,232,239,0.1)] py-6"
+              style={{
+                position: "relative",
+                minHeight: "80px", // Fixed minimum height to prevent layout shifts
+              }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between text-left"
+                className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200"
               >
                 <h3 className="text-[16px] font-medium font-['SF_Pro'] text-white leading-[28px] pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
                   <DropDownIcon
-                    className={`w-5 h-5 text-white transition-transform duration-200 ${
-                      openIndex === index ? "rotate-45" : ""
+                    className={`w-5 h-5 text-white transition-transform duration-300 ease-in-out ${
+                      openItems.has(index) ? "rotate-45" : "rotate-0"
                     }`}
                   />
                 </div>
               </button>
 
-              {openIndex === index && (
-                <div className="mt-4 pr-8">
+              {/* Content with absolute positioning to prevent layout shifts */}
+              <div
+                className="absolute left-0 right-0 z-10"
+                style={{
+                  top: "100%",
+                  backgroundColor: "#000319", // Match section background
+                  padding: "16px 0",
+                  opacity: openItems.has(index) ? 1 : 0,
+                  visibility: openItems.has(index) ? "visible" : "hidden",
+                  transition:
+                    "opacity 0.3s ease-in-out, visibility 0.3s ease-in-out",
+                  transform: openItems.has(index)
+                    ? "translateY(0)"
+                    : "translateY(-10px)",
+                  transitionProperty: "opacity, visibility, transform",
+                  transitionDuration: "0.3s, 0.3s, 0.3s",
+                  transitionTimingFunction:
+                    "ease-in-out, ease-in-out, ease-in-out",
+                }}
+              >
+                <div className="pt-4 pr-8 pb-2">
                   <p className="text-[16px] font-normal font-['Manrope'] text-white/70 leading-[24px]">
                     {faq.answer}
                   </p>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>

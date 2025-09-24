@@ -1,15 +1,108 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { HandlerIcon } from "../../icons";
 
 const Reimagine = () => {
+  const [sliderPosition, setSliderPosition] = useState(50); // Percentage from left
+  const [isDragging, setIsDragging] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationFrameRef = useRef<number | null>(null);
+
   const features = [
     "Upload your room photo and preview design styles instantly.",
     "Our AI keeps proportions and lighting accurate for realistic results.",
     "Choose from multiple design styles and color palettes.",
     "Preview changes before making any real-world modifications.",
   ];
+
+  const updateSliderPosition = useCallback((clientX: number) => {
+    if (!containerRef.current) return;
+
+    // Cancel any pending animation frame
+    if (animationFrameRef.current) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    // Use requestAnimationFrame for smoother updates
+    animationFrameRef.current = requestAnimationFrame(() => {
+      const rect = containerRef.current!.getBoundingClientRect();
+      const x = clientX - rect.left;
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+      setSliderPosition(percentage);
+    });
+  }, []);
+
+  const handleMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      setIsDragging(true);
+      updateSliderPosition(e.clientX);
+    },
+    [updateSliderPosition]
+  );
+
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!isDragging) return;
+      updateSliderPosition(e.clientX);
+    },
+    [isDragging, updateSliderPosition]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleTouchStart = useCallback(
+    (e: React.TouchEvent) => {
+      setIsDragging(true);
+      updateSliderPosition(e.touches[0].clientX);
+    },
+    [updateSliderPosition]
+  );
+
+  const handleTouchMove = useCallback(
+    (e: TouchEvent) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      updateSliderPosition(e.touches[0].clientX);
+    },
+    [isDragging, updateSliderPosition]
+  );
+
+  const handleTouchEnd = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  // Add event listeners for mouse and touch events
+  React.useEffect(() => {
+    if (isDragging) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+      document.addEventListener("touchmove", handleTouchMove, {
+        passive: false,
+      });
+      document.addEventListener("touchend", handleTouchEnd);
+    }
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
+
+      // Clean up animation frame
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [
+    isDragging,
+    handleMouseMove,
+    handleMouseUp,
+    handleTouchMove,
+    handleTouchEnd,
+  ]);
 
   return (
     <section className="bg-[#000319] py-32 px-[222px]">
@@ -29,10 +122,15 @@ const Reimagine = () => {
         {/* Main Content */}
         <div className="flex gap-[100px] items-start">
           {/* Before/After Image */}
-          <div className="w-[616px] h-[600px] rounded-[24px] overflow-hidden relative">
+          <div
+            ref={containerRef}
+            className="w-[616px] h-[600px] rounded-[24px] overflow-hidden relative cursor-col-resize select-none"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+          >
             <div className="w-full h-full relative">
-              {/* Before Image (Left Side) */}
-              <div className="absolute left-0 top-0 w-1/2 h-full">
+              {/* Before Image (Full Background) */}
+              <div className="absolute inset-0">
                 <img
                   src="/images/reimagine-before.png"
                   alt="Before"
@@ -40,8 +138,14 @@ const Reimagine = () => {
                 />
               </div>
 
-              {/* After Image (Right Side) */}
-              <div className="absolute right-0 top-0 w-1/2 h-full">
+              {/* After Image (Clipped to slider position) */}
+              <div
+                className="absolute inset-0 overflow-hidden"
+                style={{
+                  clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+                  transition: isDragging ? "none" : "clip-path 0.1s ease-out",
+                }}
+              >
                 <img
                   src="/images/reimagine-after.png"
                   alt="After"
@@ -49,10 +153,42 @@ const Reimagine = () => {
                 />
               </div>
 
+              {/* Slider Line */}
+              <div
+                className="absolute top-0 bottom-0 w-0.5 bg-white/80 z-10"
+                style={{
+                  left: `${sliderPosition}%`,
+                  transition: isDragging ? "none" : "left 0.1s ease-out",
+                }}
+              />
+
               {/* Slider Handler */}
-              <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div
+                className={`absolute top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 cursor-col-resize ${
+                  isDragging ? "scale-110" : "scale-100"
+                }`}
+                style={{
+                  left: `${sliderPosition}%`,
+                  transition: isDragging
+                    ? "none"
+                    : "left 0.1s ease-out, transform 0.1s ease-out",
+                }}
+              >
                 <HandlerIcon className="w-[49px] h-[600px]" />
               </div>
+
+              {/* Clickable overlay for better UX */}
+              <div
+                className="absolute inset-0 z-5 cursor-col-resize"
+                onClick={(e) => {
+                  if (!isDragging) {
+                    // Add a small delay for smooth click animation
+                    setTimeout(() => {
+                      updateSliderPosition(e.clientX);
+                    }, 10);
+                  }
+                }}
+              />
             </div>
           </div>
 

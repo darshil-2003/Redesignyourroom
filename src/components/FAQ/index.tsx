@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { DropDownIcon } from "../../icons";
+import { useAccordion } from "../../hooks";
 
 const FAQ = () => {
-  const [openItems, setOpenItems] = useState<Set<number>>(new Set());
+  const { openItems, toggleItem, isOpen } = useAccordion(7, {
+    allowMultiple: true,
+  });
 
   const faqs = [
     {
@@ -49,18 +52,6 @@ const FAQ = () => {
     },
   ];
 
-  const toggleFAQ = (index: number) => {
-    setOpenItems((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(index)) {
-        newSet.delete(index);
-      } else {
-        newSet.add(index);
-      }
-      return newSet;
-    });
-  };
-
   return (
     <section className="bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px] relative">
       {/* Background Ray - Removed image, using gradient instead */}
@@ -90,7 +81,7 @@ const FAQ = () => {
               }}
             >
               <button
-                onClick={() => toggleFAQ(index)}
+                onClick={() => toggleItem(index)}
                 className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200"
               >
                 <h3 className="text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['SF_Pro'] text-white leading-[22px] sm:leading-[24px] md:leading-[28px] pr-2 sm:pr-4">
@@ -99,7 +90,7 @@ const FAQ = () => {
                 <div className="flex-shrink-0">
                   <DropDownIcon
                     className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 ease-in-out ${
-                      openItems.has(index) ? "rotate-45" : "rotate-0"
+                      isOpen(index) ? "rotate-45" : "rotate-0"
                     }`}
                   />
                 </div>
@@ -112,11 +103,11 @@ const FAQ = () => {
                   top: "100%",
                   backgroundColor: "#000319", // Match section background
                   padding: "12px 0 md:16px 0",
-                  opacity: openItems.has(index) ? 1 : 0,
-                  visibility: openItems.has(index) ? "visible" : "hidden",
+                  opacity: isOpen(index) ? 1 : 0,
+                  visibility: isOpen(index) ? "visible" : "hidden",
                   transition:
                     "opacity 0.3s ease-in-out, visibility 0.3s ease-in-out",
-                  transform: openItems.has(index)
+                  transform: isOpen(index)
                     ? "translateY(0)"
                     : "translateY(-10px)",
                   transitionProperty: "opacity, visibility, transform",

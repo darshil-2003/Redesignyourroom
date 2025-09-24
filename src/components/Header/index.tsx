@@ -3,7 +3,11 @@
 import React, { useState } from "react";
 import { LogoIcon } from "../../icons";
 
-const Header = () => {
+interface HeaderProps {
+  onOpenPlayground: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -45,7 +49,10 @@ const Header = () => {
           </a>
 
           {/* CTA Button */}
-          <button className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity">
+          <button
+            onClick={onOpenPlayground}
+            className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity"
+          >
             Get Started
           </button>
         </nav>
@@ -112,7 +119,10 @@ const Header = () => {
             >
               FAQ
             </a>
-            <button className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity w-fit">
+            <button
+              onClick={onOpenPlayground}
+              className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity w-fit"
+            >
               Get Started
             </button>
           </nav>

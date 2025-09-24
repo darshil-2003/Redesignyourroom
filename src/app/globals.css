@@ -40,13 +40,13 @@ html {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-75%); /* Adjusted for 400% width system */
+    transform: translateX(-83.33%); /* Adjusted for 600% width system */
   }
 }
 
 @keyframes scroll-right {
   0% {
-    transform: translateX(-75%); /* Adjusted for 400% width system */
+    transform: translateX(-83.33%); /* Adjusted for 600% width system */
   }
   100% {
     transform: translateX(0);
@@ -54,13 +54,13 @@ html {
 }
 
 .animate-scroll-left {
-  animation: scroll-left 60s linear infinite;
+  animation: scroll-left 100s linear infinite;
   will-change: transform;
   animation-fill-mode: both;
 }
 
 .animate-scroll-right {
-  animation: scroll-right 60s linear infinite;
+  animation: scroll-right 100s linear infinite;
   will-change: transform;
   animation-fill-mode: both;
 }

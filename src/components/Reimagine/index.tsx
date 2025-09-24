@@ -1,13 +1,23 @@
 "use client";
 
-import React, { useState, useRef, useCallback } from "react";
+import React from "react";
 import { HandlerIcon } from "../../icons";
+import { useSlider } from "../../hooks";
 
 const Reimagine = () => {
-  const [sliderPosition, setSliderPosition] = useState(50); // Percentage from left
-  const [isDragging, setIsDragging] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameRef = useRef<number | null>(null);
+  const {
+    position: sliderPosition,
+    isDragging,
+    containerRef,
+    handleMouseDown,
+    handleTouchStart,
+    setPosition,
+  } = useSlider({
+    initialPosition: 50,
+    min: 0,
+    max: 100,
+    step: 1,
+  });
 
   const features = [
     "Upload your room photo and preview design styles instantly.",
@@ -15,94 +25,6 @@ const Reimagine = () => {
     "Choose from multiple design styles and color palettes.",
     "Preview changes before making any real-world modifications.",
   ];
-
-  const updateSliderPosition = useCallback((clientX: number) => {
-    if (!containerRef.current) return;
-
-    // Cancel any pending animation frame
-    if (animationFrameRef.current) {
-      cancelAnimationFrame(animationFrameRef.current);
-    }
-
-    // Use requestAnimationFrame for smoother updates
-    animationFrameRef.current = requestAnimationFrame(() => {
-      const rect = containerRef.current!.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
-      setSliderPosition(percentage);
-    });
-  }, []);
-
-  const handleMouseDown = useCallback(
-    (e: React.MouseEvent) => {
-      setIsDragging(true);
-      updateSliderPosition(e.clientX);
-    },
-    [updateSliderPosition]
-  );
-
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      if (!isDragging) return;
-      updateSliderPosition(e.clientX);
-    },
-    [isDragging, updateSliderPosition]
-  );
-
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false);
-  }, []);
-
-  const handleTouchStart = useCallback(
-    (e: React.TouchEvent) => {
-      setIsDragging(true);
-      updateSliderPosition(e.touches[0].clientX);
-    },
-    [updateSliderPosition]
-  );
-
-  const handleTouchMove = useCallback(
-    (e: TouchEvent) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      updateSliderPosition(e.touches[0].clientX);
-    },
-    [isDragging, updateSliderPosition]
-  );
-
-  const handleTouchEnd = useCallback(() => {
-    setIsDragging(false);
-  }, []);
-
-  // Add event listeners for mouse and touch events
-  React.useEffect(() => {
-    if (isDragging) {
-      document.addEventListener("mousemove", handleMouseMove);
-      document.addEventListener("mouseup", handleMouseUp);
-      document.addEventListener("touchmove", handleTouchMove, {
-        passive: false,
-      });
-      document.addEventListener("touchend", handleTouchEnd);
-    }
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("touchmove", handleTouchMove);
-      document.removeEventListener("touchend", handleTouchEnd);
-
-      // Clean up animation frame
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, [
-    isDragging,
-    handleMouseMove,
-    handleMouseUp,
-    handleTouchMove,
-    handleTouchEnd,
-  ]);
 
   return (
     <section className="bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px]">
@@ -182,10 +104,16 @@ const Reimagine = () => {
                 className="absolute inset-0 z-5 cursor-col-resize"
                 onClick={(e) => {
                   if (!isDragging) {
-                    // Add a small delay for smooth click animation
-                    setTimeout(() => {
-                      updateSliderPosition(e.clientX);
-                    }, 10);
+                    // Click to position slider
+                    const rect = containerRef.current?.getBoundingClientRect();
+                    if (rect) {
+                      const x = e.clientX - rect.left;
+                      const percentage = Math.max(
+                        0,
+                        Math.min(100, (x / rect.width) * 100)
+                      );
+                      setPosition(percentage);
+                    }
                   }
                 }}
               />

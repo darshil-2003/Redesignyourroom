@@ -86,14 +86,14 @@ const Inspirations = () => {
         {/* First Row - Left to Right scroll */}
         <div className="relative w-full overflow-hidden mb-3 sm:mb-4 md:mb-6">
           <div
-            className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll-left will-change-transform"
-            style={{ width: "400%" }}
+            className="flex gap-2 sm:gap-4 md:gap-6 animate-scroll-left will-change-transform"
+            style={{ width: "600%" }}
           >
             {/* Original Set - Loops 1, 2, 3 */}
             {row1Images.map((image, index) => (
               <div
                 key={`left-original-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -106,7 +106,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-original-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -119,7 +119,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-original-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -134,7 +134,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -147,7 +147,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -160,7 +160,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -175,7 +175,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate2-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -188,7 +188,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate2-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -201,7 +201,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate2-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -216,7 +216,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate3-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -229,7 +229,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate3-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -242,7 +242,7 @@ const Inspirations = () => {
             {row1Images.map((image, index) => (
               <div
                 key={`left-duplicate3-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -258,14 +258,14 @@ const Inspirations = () => {
         {/* Second Row - Right to Left scroll */}
         <div className="relative w-full overflow-hidden">
           <div
-            className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll-right will-change-transform"
-            style={{ width: "400%" }}
+            className="flex gap-2 sm:gap-4 md:gap-6 animate-scroll-right will-change-transform"
+            style={{ width: "600%" }}
           >
             {/* Third Duplicate Set - Loops 12, 11, 10 (offset by 6 to avoid same image) */}
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate3-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -278,7 +278,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate3-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -291,7 +291,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate3-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -306,7 +306,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate2-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -319,7 +319,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate2-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -332,7 +332,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate2-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -347,7 +347,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -360,7 +360,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -373,7 +373,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-duplicate-1-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -388,7 +388,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-original-3-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -401,7 +401,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-original-2-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}
@@ -414,7 +414,7 @@ const Inspirations = () => {
             {row2Images.map((image, index) => (
               <div
                 key={`right-original-${index}`}
-                className="flex-shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
+                className="flex-shrink-0 w-[150px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[120px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
               >
                 <img
                   src={image.src}

@@ -1,9 +1,15 @@
 "use client";
 
 import React from "react";
+import { useIntersectionObserver } from "../../hooks";
 import { ImageUploadIcon } from "../../icons";
 
 const Features = () => {
+  const [ref, isVisible] = useIntersectionObserver({
+    threshold: 0.1,
+    freezeOnceVisible: true,
+  });
+
   const features = [
     {
       id: 1,
@@ -36,7 +42,12 @@ const Features = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px] relative">
+    <section
+      ref={ref}
+      className={`bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px] relative transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
       {/* Background Ray - Responsive sizes */}
       <div className="absolute -left-[50px] md:-left-[100px] -top-[110px] md:-top-[220px] w-[400px] md:w-[600px] lg:w-[830px] h-[400px] md:h-[600px] lg:h-[816px] bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
 

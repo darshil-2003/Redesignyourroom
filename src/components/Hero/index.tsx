@@ -2,7 +2,11 @@
 
 import React from "react";
 
-const Hero = () => {
+interface HeroProps {
+  onOpenPlayground: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenPlayground }) => {
   return (
     <section className="relative bg-[#000319] min-h-[50px] flex items-start pt-8 md:pt-10 justify-center overflow-hidden w-full max-w-full">
       {/* Background Rays - Responsive sizes */}
@@ -60,7 +64,10 @@ const Hero = () => {
         </p>
         <div className="mt-3 md:mt-4 lg:mt-5">
           {/* CTA Button */}
-          <button className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['Lexend'] px-4 md:px-6 py-2 md:py-3 rounded-[10px] md:rounded-[12px] hover:opacity-90 transition-opacity">
+          <button
+            onClick={onOpenPlayground}
+            className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['Lexend'] px-4 md:px-6 py-2 md:py-3 rounded-[10px] md:rounded-[12px] hover:opacity-90 transition-opacity"
+          >
             Try AI For Interior Design
           </button>
         </div>

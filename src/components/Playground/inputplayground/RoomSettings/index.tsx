@@ -1,4 +1,5 @@
 import React from "react";
+import { MinusIcon, PlusIcon } from "../../../../icons";
 
 const RoomSettings = () => {
   return (
@@ -123,59 +124,13 @@ const RoomSettings = () => {
             </div>
             <div className="content-stretch flex gap-[4px] items-center relative shrink-0">
               <div className="overflow-clip relative shrink-0 size-[20px]">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="2"
-                    y="2"
-                    width="16"
-                    height="16"
-                    rx="2"
-                    stroke="rgba(255,255,255,0.5)"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M6 8L8 6L12 10L14 8"
-                    stroke="rgba(255,255,255,0.5)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <MinusIcon />
               </div>
               <div className="flex flex-col font-['Manrope:Medium',_sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[14px] text-[rgba(255,255,255,0.5)] text-nowrap">
                 <p className="leading-[20px] whitespace-pre">2</p>
               </div>
               <div className="overflow-clip relative shrink-0 size-[20px]">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="2"
-                    y="2"
-                    width="16"
-                    height="16"
-                    rx="2"
-                    stroke="rgba(255,255,255,0.5)"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M6 8L8 6L12 10L14 8"
-                    stroke="rgba(255,255,255,0.5)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <PlusIcon />
               </div>
             </div>
           </div>

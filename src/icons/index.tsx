@@ -90,7 +90,38 @@ export const HandlerIcon = ({
 }: {
   className?: string;
 }) => (
-  <img src="/images/handler.svg" alt="Slider handler" className={className} />
+  <svg
+    className={className}
+    width="46"
+    height="46"
+    viewBox="0 0 46 46"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="23"
+      cy="23"
+      r="23"
+      transform="matrix(-1 0 0 1 46 0)"
+      fill="white"
+    />
+    <path
+      d="M18.2415 18.2413L13.4828 23L18.2415 27.7586"
+      stroke="black"
+      strokeWidth="1.58621"
+    />
+    <path
+      d="M27.7588 18.2413L32.5174 23L27.7588 27.7586"
+      stroke="black"
+      strokeWidth="1.58621"
+    />
+    <path
+      opacity="0.05"
+      d="M23 13.0863L23 32.9139"
+      stroke="black"
+      strokeWidth="1.58621"
+    />
+  </svg>
 );
 
 // Line Icon
@@ -335,5 +366,78 @@ export const ImageUploadIcon = ({
         />
       </clipPath>
     </defs>
+  </svg>
+);
+export const UploadAreaIcon = ({
+  className = "w-6 h-6",
+}: {
+  className?: string;
+}) => (
+  <svg
+    className={className}
+    width="25"
+    height="25"
+    viewBox="0 0 25 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_111_95)">
+      <path
+        d="M20.1936 9.52318C19.0844 5.10438 14.6031 2.42145 10.1843 3.53068C6.73112 4.39753 4.22372 7.38207 3.96537 10.933C1.51347 11.3373 -0.146425 13.6527 0.257921 16.1046C0.617366 18.2844 2.50613 19.8808 4.71529 19.872H8.46488V18.3722H4.71529C3.05863 18.3722 1.71562 17.0292 1.71562 15.3725C1.71562 13.7158 3.05863 12.3728 4.71529 12.3728C5.12948 12.3728 5.46521 12.0371 5.46521 11.6229C5.46146 7.89539 8.48021 4.87059 12.2077 4.86689C15.4344 4.86365 18.2121 7.14481 18.8362 10.3105C18.8979 10.6266 19.1544 10.8681 19.4737 10.9105C21.5239 11.2024 22.9491 13.1011 22.6572 15.1512C22.3951 16.9922 20.8232 18.3629 18.9637 18.3722H15.9641V19.872H18.9637C21.8629 19.8632 24.206 17.5059 24.1972 14.6067C24.1899 12.1934 22.538 10.0959 20.1936 9.52318Z"
+        fill="currentColor"
+      />
+      <path
+        d="M11.6818 12.5903L8.68213 15.59L9.73951 16.6474L11.4643 14.9301V22.1218H12.9642V14.9301L14.6815 16.6474L15.7389 15.59L12.7392 12.5903C12.4467 12.2996 11.9743 12.2996 11.6818 12.5903Z"
+        fill="currentColor"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_111_95">
+        <rect
+          width="24"
+          height="24"
+          fill="white"
+          transform="translate(0.197266 0.701141)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+export const MinusIcon = ({
+  className = "w-5 h-5",
+}: {
+  className?: string;
+}) => (
+  <svg
+    className={className}
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.4809 10.7045H5.51999C5.13079 10.7045 4.81543 10.3892 4.81543 9.99997C4.81543 9.61077 5.13079 9.29541 5.51999 9.29541H14.4809C14.8701 9.29541 15.1854 9.61077 15.1854 9.99997C15.1854 10.3892 14.8701 10.7045 14.4809 10.7045Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+export const PlusIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
+  <svg
+    className={className}
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.99997 15.185C9.61077 15.185 9.29541 14.8696 9.29541 14.4804V5.51956C9.29541 5.13036 9.61077 4.815 9.99997 4.815C10.3892 4.815 10.7045 5.13036 10.7045 5.51956V14.4804C10.7045 14.8696 10.3892 15.185 9.99997 15.185Z"
+      fill="currentColor"
+    />
+    <path
+      d="M14.4809 10.7046H5.51999C5.13079 10.7046 4.81543 10.3892 4.81543 10C4.81543 9.61083 5.13079 9.29547 5.51999 9.29547H14.4809C14.8701 9.29547 15.1854 9.61083 15.1854 10C15.1854 10.3892 14.8701 10.7046 14.4809 10.7046Z"
+      fill="currentColor"
+    />
   </svg>
 );

@@ -13,17 +13,17 @@ const ImageGrid = () => {
   ];
 
   return (
-    <div className="basis-0 box-border content-stretch flex flex-col gap-[20px] sm:gap-[38px] grow h-full items-center justify-center min-h-px min-w-px px-[20px] sm:px-[60px] lg:px-[120px] py-0 relative shrink-0">
-      <div className="content-stretch flex flex-col gap-[16px] sm:gap-[24px] items-center relative shrink-0 w-full">
+    <div className="basis-0 box-border content-stretch flex flex-col gap-[12px] sm:gap-[16px] md:gap-[20px] lg:gap-[38px] grow h-full items-center justify-center min-h-px min-w-px px-[8px] sm:px-[12px] md:px-[20px] lg:px-[40px] xl:px-[60px] py-0 relative shrink-0 overflow-y-auto">
+      <div className="content-stretch flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center relative shrink-0 w-full">
         {/* First Row */}
-        <div className="content-stretch flex flex-col sm:flex-row gap-[16px] sm:gap-[24px] items-center justify-center relative shrink-0 w-full">
+        <div className="content-stretch flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center justify-center relative shrink-0 w-full">
           <ImageCard imageUrl={images[0]} hasUpscaler={true} />
           <ImageCard imageUrl={images[1]} hasUpscaler={true} />
           <ImageCard imageUrl={images[2]} hasUpscaler={true} />
         </div>
 
         {/* Second Row */}
-        <div className="content-stretch flex flex-col sm:flex-row gap-[16px] sm:gap-[24px] items-center justify-center relative shrink-0 w-full">
+        <div className="content-stretch flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center justify-center relative shrink-0 w-full">
           <ImageCard imageUrl={images[3]} hasUpscaler={true} />
           <ImageCard imageUrl={images[4]} hasUpscaler={true} />
           <ImageCard imageUrl={images[5]} hasUpscaler={true} />

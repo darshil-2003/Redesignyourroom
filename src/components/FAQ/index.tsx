@@ -62,17 +62,17 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#000319] py-32 px-[222px] relative">
+    <section className="bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px] relative">
       {/* Background Ray - Removed image, using gradient instead */}
-      <div className="absolute -right-[100px] -top-[100px] w-[830px] h-[816px] bg-gradient-to-bl from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute -right-[50px] md:-right-[100px] -top-[50px] md:-top-[100px] w-[400px] md:w-[600px] lg:w-[830px] h-[400px] md:h-[600px] lg:h-[816px] bg-gradient-to-bl from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
 
       <div className="max-w-[800px] mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-[52px] font-normal font-['Lexend'] text-white leading-[66px] mb-4">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal font-['Lexend'] text-white leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[66px] mb-4">
             We've Got You Covered
           </h2>
-          <p className="text-[18px] font-normal font-['Manrope'] text-white/50 leading-normal tracking-[0.36px] max-w-[1070px] mx-auto">
+          <p className="text-[14px] sm:text-[16px] md:text-[18px] font-normal font-['Manrope'] text-white/50 leading-normal tracking-[0.28px] sm:tracking-[0.32px] md:tracking-[0.36px] max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1070px] mx-auto">
             Whether you're just starting out or exploring advanced features, our
             FAQs provide the guidance you need to design with confidence.
           </p>
@@ -83,22 +83,22 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-[rgba(228,232,239,0.1)] py-6"
+              className="border-b border-[rgba(228,232,239,0.1)] py-4 md:py-6"
               style={{
                 position: "relative",
-                minHeight: "80px", // Fixed minimum height to prevent layout shifts
+                minHeight: "60px", // Reduced for mobile
               }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200"
               >
-                <h3 className="text-[16px] font-medium font-['SF_Pro'] text-white leading-[28px] pr-4">
+                <h3 className="text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['SF_Pro'] text-white leading-[22px] sm:leading-[24px] md:leading-[28px] pr-2 sm:pr-4">
                   {faq.question}
                 </h3>
                 <div className="flex-shrink-0">
                   <DropDownIcon
-                    className={`w-5 h-5 text-white transition-transform duration-300 ease-in-out ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 ease-in-out ${
                       openItems.has(index) ? "rotate-45" : "rotate-0"
                     }`}
                   />
@@ -111,7 +111,7 @@ const FAQ = () => {
                 style={{
                   top: "100%",
                   backgroundColor: "#000319", // Match section background
-                  padding: "16px 0",
+                  padding: "12px 0 md:16px 0",
                   opacity: openItems.has(index) ? 1 : 0,
                   visibility: openItems.has(index) ? "visible" : "hidden",
                   transition:
@@ -125,8 +125,8 @@ const FAQ = () => {
                     "ease-in-out, ease-in-out, ease-in-out",
                 }}
               >
-                <div className="pt-4 pr-8 pb-2">
-                  <p className="text-[16px] font-normal font-['Manrope'] text-white/70 leading-[24px]">
+                <div className="pt-3 md:pt-4 pr-4 sm:pr-6 md:pr-8 pb-2">
+                  <p className="text-[13px] sm:text-[14px] md:text-[16px] font-normal font-['Manrope'] text-white/70 leading-[20px] sm:leading-[22px] md:leading-[24px]">
                     {faq.answer}
                   </p>
                 </div>

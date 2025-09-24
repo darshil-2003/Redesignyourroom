@@ -59,22 +59,17 @@ const Inspirations = () => {
       src: "/images/inspiration-11.png",
       alt: "Spa-like bathroom",
     },
-    {
-      id: 12,
-      src: "/images/inspiration-1.png",
-      alt: "Outdoor living space",
-    },
   ];
 
   return (
-    <section className="bg-[#000319] py-32">
+    <section className="bg-[#000319] py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
       {/* Header */}
-      <div className="max-w-[1920px] mx-auto px-[222px] mb-20">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[222px] mb-8 sm:mb-12 md:mb-16 lg:mb-20">
         <div className="text-center">
-          <h2 className="text-[52px] font-normal font-['Lexend'] text-white leading-[66px] mb-4">
+          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[52px] font-normal font-['Lexend'] text-white leading-[32px] sm:leading-[36px] md:leading-[44px] lg:leading-[56px] xl:leading-[66px] mb-3 sm:mb-4">
             Design Ideas Made Simple
           </h2>
-          <p className="text-[18px] font-normal font-['Manrope'] text-white/50 leading-normal tracking-[0.36px] max-w-[1070px] mx-auto">
+          <p className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-normal font-['Manrope'] text-white/50 leading-[1.4] sm:leading-[1.5] md:leading-normal tracking-[0.26px] sm:tracking-[0.28px] md:tracking-[0.32px] lg:tracking-[0.36px] max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1070px] mx-auto">
             Explore curated design styles, color palettes, and layouts tailored
             to your room. Get inspired with ready-to-use concepts you can
             preview instantly.
@@ -85,12 +80,16 @@ const Inspirations = () => {
       {/* Full Width Flowing Image Gallery */}
       <div className="w-full overflow-hidden max-w-full">
         {/* First Row - Left to Right */}
-        <div className="flex animate-scroll-left mb-6">
-          {/* All images + duplicates for seamless loop */}
-          {[...inspirationImages, ...inspirationImages].map((image, index) => (
+        <div className="flex animate-scroll-left mb-3 sm:mb-4 md:mb-6">
+          {/* All images + duplicates for seamless loop - using 3 copies for smooth infinite scroll */}
+          {[
+            ...inspirationImages,
+            ...inspirationImages,
+            ...inspirationImages,
+          ].map((image, index) => (
             <div
               key={`row1-${image.id}-${index}`}
-              className="flex-shrink-0 mr-6 w-[400px] h-[320px] rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group"
+              className="flex-shrink-0 mr-3 sm:mr-4 md:mr-6 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
             >
               <img
                 src={image.src}
@@ -104,11 +103,15 @@ const Inspirations = () => {
 
         {/* Second Row - Right to Left */}
         <div className="flex animate-scroll-right">
-          {/* All images + duplicates for seamless loop */}
-          {[...inspirationImages, ...inspirationImages].map((image, index) => (
+          {/* All images + duplicates for seamless loop - using 3 copies for smooth infinite scroll */}
+          {[
+            ...inspirationImages,
+            ...inspirationImages,
+            ...inspirationImages,
+          ].map((image, index) => (
             <div
               key={`row2-${image.id}-${index}`}
-              className="flex-shrink-0 mr-6 w-[400px] h-[320px] rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group"
+              className="flex-shrink-0 mr-3 sm:mr-4 md:mr-6 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[400px] h-[160px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[320px] rounded-[12px] sm:rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)] hover:border-white/20 transition-colors cursor-pointer group relative"
             >
               <img
                 src={image.src}

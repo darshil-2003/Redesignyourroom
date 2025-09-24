@@ -1,80 +1,25 @@
 "use client";
 
 import React from "react";
+import SeamlessCarousel from "../SeamlessCarousel";
 
 const BeforeAfter = () => {
-  const images = [
-    {
-      id: 1,
-      src: "/images/before-after-1.png",
-      alt: "Before: Empty room sketch",
-    },
-    {
-      id: 2,
-      src: "/images/before-after-2.png",
-      alt: "After: Modern living room",
-    },
-    {
-      id: 3,
-      src: "/images/before-after-3.png",
-      alt: "AI generated bedroom design",
-    },
-    {
-      id: 4,
-      src: "/images/before-after-4.png",
-      alt: "Fantasy interior design",
-    },
-    {
-      id: 5,
-      src: "/images/before-after-5.png",
-      alt: "Another AI generated design",
-    },
-  ];
-
   return (
-    <section className="bg-[#000319] py-32">
-      <div className="max-w-[1920px] mx-auto px-[222px]">
+    <section className="bg-[#000319] py-16 md:py-24 lg:py-32">
+      <div className="max-w-[1920px] ">
         {/* Header */}
-
-        <div className="flex gap-6 items-center justify-center h-[320px] relative">
-          {images.map((image, index) => (
-            <div
-              key={image.id}
-              className="relative w-[400px] h-[320px] rounded-[24px] overflow-hidden border border-[rgba(206,212,252,0.08)]"
-            >
-              {index === 2 ? (
-                // Split image for the third item (combining two images)
-                <div className="relative w-full h-full">
-                  <div className="absolute left-0 top-0 w-1/2 h-full">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute right-0 top-0 w-1/2 h-full">
-                    <img
-                      src={images[3]?.src || image.src}
-                      alt={images[3]?.alt || image.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              ) : (
-                // Regular single image for all other images
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-          ))}
-
-          {/* Vertical Line Separator */}
-          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-[334px] bg-gradient-to-b from-transparent via-[rgba(235,240,255,0.24)] to-transparent" />
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal font-['Lexend'] text-white leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[66px] mb-4">
+            Before & After Transformations
+          </h2>
+          <p className="text-[14px] sm:text-[16px] md:text-[18px] font-normal font-['Manrope'] text-white/50 leading-normal tracking-[0.28px] sm:tracking-[0.32px] md:tracking-[0.36px] max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1070px] mx-auto">
+            See how our AI transforms empty spaces into stunning interiors. From
+            architectural sketches to photorealistic designs.
+          </p>
         </div>
+
+        {/* Seamless Carousel */}
+        <SeamlessCarousel />
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ const GenerateButton: React.FC<GenerateButtonProps> = ({ playgroundState }) => {
 
   return (
     <div
-      className={`backdrop-blur-[15px] backdrop-filter box-border content-stretch flex gap-[8px] items-center justify-center overflow-clip px-[8px] py-[10px] relative rounded-[8px] shrink-0 w-full max-w-[292px] transition-colors duration-200 ${
+      className={`backdrop-blur-[15px] backdrop-filter box-border content-stretch flex gap-[8px] items-center justify-center overflow-clip px-[8px] py-[10px] relative rounded-[8px] shrink-0 w-full transition-colors duration-200 ${
         isGenerating
           ? "bg-gray-300 cursor-not-allowed"
           : "bg-white cursor-pointer hover:bg-gray-100"

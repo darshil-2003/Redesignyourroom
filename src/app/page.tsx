@@ -20,15 +20,17 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000319] overflow-x-hidden">
+    <div className="min-h-screen bg-[#000319] overflow-x-hidden relative h-full ">
       <Header onOpenPlayground={handleOpenPlayground} />
-      <Hero onOpenPlayground={handleOpenPlayground} />
-      <BeforeAfter />
-      <Reimagine />
-      <HowItWorks />
-      <Features />
-      <Inspirations />
-      <FAQ />
+      <main className="w-full">
+        <Hero onOpenPlayground={handleOpenPlayground} />
+        <BeforeAfter />
+        <Reimagine />
+        <HowItWorks />
+        <Features />
+        <Inspirations />
+        <FAQ />
+      </main>
       <Footer />
     </div>
   );

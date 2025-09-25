@@ -15,17 +15,17 @@ const PromptInput: React.FC<PromptInputProps> = ({ playgroundState }) => {
   };
 
   return (
-    <div className="backdrop-blur-[3px] backdrop-filter content-stretch flex flex-col gap-[8px] h-[180px] sm:h-[200px] lg:h-[220px] items-start overflow-clip relative rounded-[8px] shrink-0 w-full max-w-[292px]">
-      <div className="flex flex-col font-['SF_Pro:Medium',_sans-serif] font-[510] justify-center leading-[0] relative shrink-0 text-[#f9fbfc] text-[14px] text-nowrap">
-        <p className="leading-[26px] whitespace-pre">Additional Prompt</p>
+    <div className="backdrop-blur-[3px] backdrop-filter flex flex-col gap-3 h-48 md:h-52 lg:h-56 items-start overflow-clip relative rounded-xl shrink-0 w-full animate-fade-in-up animate-delay-100 hover-lift">
+      <div className="flex flex-col font-['Lexend'] font-medium justify-center leading-none relative shrink-0 text-white text-sm md:text-base text-nowrap">
+        <p className="leading-none whitespace-pre">Additional Prompt</p>
       </div>
-      <div className="basis-0 bg-[rgba(255,255,255,0.08)] box-border content-stretch flex flex-col gap-[10px] grow items-start min-h-px min-w-px p-[12px] relative rounded-[6px] shrink-0 w-full">
+      <div className="bg-[rgba(255,255,255,0.08)] flex flex-col gap-3 grow items-start min-h-0 min-w-0 p-4 relative rounded-lg shrink-0 w-full">
         <textarea
           value={settings.prompt}
           onChange={handlePromptChange}
           placeholder="Please describe your creative ideas for the image..."
-          className="flex flex-col font-['Manrope:Regular',_sans-serif] font-normal h-[44px] justify-center leading-[0] relative shrink-0 text-[#5e6266] text-[16px] w-full bg-transparent border-none outline-none resize-none"
-          style={{ lineHeight: "1.4" }}
+          className="flex flex-col font-['Manrope'] font-normal h-24 md:h-28 lg:h-32 justify-start leading-relaxed relative shrink-0 text-[#5e6266] text-sm md:text-base w-full bg-transparent border-none outline-none resize-none"
+          style={{ lineHeight: "1.5" }}
         />
       </div>
     </div>

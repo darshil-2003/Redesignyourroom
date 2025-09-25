@@ -14,7 +14,7 @@ const DesignTypeSelector: React.FC<DesignTypeSelectorProps> = ({
   const designTypes = ["Drawing", "Photo", "Sketch"];
 
   return (
-    <div className="bg-[rgba(255,255,255,0.08)] box-border content-stretch flex flex-col gap-[20px] items-center p-[14px] relative rounded-[8px] shrink-0 w-full max-w-[292px]">
+    <div className="bg-[rgba(255,255,255,0.08)] box-border content-stretch flex flex-col gap-[20px] items-center p-[14px] relative rounded-[8px] shrink-0 w-full">
       <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">
         <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
           <div className="flex flex-col font-['Lexend:Medium',_sans-serif] font-medium justify-center leading-[0] relative shrink-0 text-[#e1e7ef] text-[14px] text-nowrap">

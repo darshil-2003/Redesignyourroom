@@ -105,7 +105,7 @@ const GeometrySlider: React.FC<GeometrySliderProps> = ({ playgroundState }) => {
   }, []);
 
   return (
-    <div className="backdrop-blur-[3px] backdrop-filter content-stretch flex flex-col gap-[9px] items-start overflow-clip relative shrink-0 w-full max-w-[292px]">
+    <div className="backdrop-blur-[3px] backdrop-filter content-stretch flex flex-col gap-[9px] items-start overflow-clip relative shrink-0 w-full">
       <div className="bg-[rgba(255,255,255,0.08)] box-border content-stretch flex flex-col gap-[24px] items-center p-[14px] relative rounded-[8px] shrink-0 w-full">
         <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full">
           <div className="content-stretch flex items-center justify-between relative shrink-0 w-full">

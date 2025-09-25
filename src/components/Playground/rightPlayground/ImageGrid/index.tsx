@@ -22,8 +22,8 @@ const ImageGrid: React.FC = () => {
   ];
 
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-      <div className="bg-[#000319] p-[8px] sm:p-[12px] rounded-[16px] sm:rounded-[24px] content-stretch flex flex-col sm:flex-row gap-[12px] sm:gap-[24px] items-center justify-center relative shrink-0 w-full">
+    <div className="w-full flex justify-center overflow-hidden h-full">
+      <div className="bg-[#000319] p-3 lg:p-4 xl:p-6 2xl:p-8 rounded-2xl lg:rounded-3xl flex gap-3 lg:gap-4 xl:gap-6 2xl:gap-8 items-center justify-center w-full max-w-full">
         {images.map((image, index) => (
           <ImageCard
             key={index}

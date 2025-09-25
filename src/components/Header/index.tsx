@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { LogoIcon } from "../../icons";
 
 interface HeaderProps {
@@ -9,6 +10,24 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const isPlaygroundPage = pathname === "/playground";
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith("#")) {
+      // Handle anchor links
+      if (isPlaygroundPage) {
+        router.push(`/${href}`);
+      } else {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push(href);
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="backdrop-blur-[4.75px] bg-[rgba(7,6,16,0.2)] border-b border-[rgba(224,222,254,0)] px-4 sm:px-8 lg:px-[222px] py-4 sm:py-[22px] w-full max-w-full overflow-x-hidden">
@@ -23,37 +42,45 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex backdrop-blur-[22px] items-center gap-[75px] rounded-[999px]">
-          <a
-            href="#home"
+          <button
+            onClick={() => handleNavigation(isPlaygroundPage ? "/" : "#home")}
             className="text-white text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
           >
             Home
-          </a>
-          <a
-            href="#how-it-works"
+          </button>
+          <button
+            onClick={() =>
+              handleNavigation(
+                isPlaygroundPage ? "/#how-it-works" : "#how-it-works"
+              )
+            }
             className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
           >
             How It Works
-          </a>
-          <a
-            href="#features"
+          </button>
+          <button
+            onClick={() =>
+              handleNavigation(isPlaygroundPage ? "/#features" : "#features")
+            }
             className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
           >
             Features
-          </a>
-          <a
-            href="#faq"
+          </button>
+          <button
+            onClick={() =>
+              handleNavigation(isPlaygroundPage ? "/#faq" : "#faq")
+            }
             className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
           >
             FAQ
-          </a>
+          </button>
 
           {/* CTA Button */}
           <button
             onClick={onOpenPlayground}
             className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity"
           >
-            Get Started
+            {isPlaygroundPage ? "Back to Home" : "Get Started"}
           </button>
         </nav>
 
@@ -91,39 +118,43 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
       {isMenuOpen && (
         <div className="lg:hidden mt-4 pb-4 border-t border-white/10">
           <nav className="flex flex-col space-y-4 pt-4">
-            <a
-              href="#home"
-              className="text-white text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => handleNavigation(isPlaygroundPage ? "/" : "#home")}
+              className="text-white text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
             >
               Home
-            </a>
-            <a
-              href="#how-it-works"
-              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() =>
+                handleNavigation(
+                  isPlaygroundPage ? "/#how-it-works" : "#how-it-works"
+                )
+              }
+              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
             >
               How It Works
-            </a>
-            <a
-              href="#features"
-              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() =>
+                handleNavigation(isPlaygroundPage ? "/#features" : "#features")
+              }
+              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
             >
               Features
-            </a>
-            <a
-              href="#faq"
-              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() =>
+                handleNavigation(isPlaygroundPage ? "/#faq" : "#faq")
+              }
+              className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
             >
               FAQ
-            </a>
+            </button>
             <button
               onClick={onOpenPlayground}
               className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-[16px] font-medium font-['Lexend'] px-6 py-3 rounded-[12px] hover:opacity-90 transition-opacity w-fit"
             >
-              Get Started
+              {isPlaygroundPage ? "Back to Home" : "Get Started"}
             </button>
           </nav>
         </div>

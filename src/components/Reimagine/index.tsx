@@ -46,23 +46,26 @@ const Reimagine = () => {
           {/* Before/After Image */}
           <div
             ref={containerRef}
-            className="w-full max-w-[616px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden relative cursor-col-resize select-none mx-auto lg:mx-0"
+            className="w-full max-w-[616px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-[16px] md:rounded-[20px] lg:rounded-[24px] overflow-hidden relative select-none mx-auto lg:mx-0"
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
+            style={{
+              cursor: isDragging ? "col-resize" : "pointer",
+            }}
           >
             <div className="w-full h-full relative">
               {/* Before Image (Full Background) */}
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 pointer-events-none">
                 <img
                   src="/images/reimagine-after.png"
                   alt="Before"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover pointer-events-none"
                 />
               </div>
 
               {/* After Image (Clipped to slider position) */}
               <div
-                className="absolute inset-0 overflow-hidden"
+                className="absolute inset-0 overflow-hidden pointer-events-none"
                 style={{
                   clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
                   transition: isDragging ? "none" : "clip-path 0.1s ease-out",
@@ -71,7 +74,7 @@ const Reimagine = () => {
                 <img
                   src="/images/reimagineo-before.png"
                   alt="After"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover pointer-events-none"
                 />
               </div>
 

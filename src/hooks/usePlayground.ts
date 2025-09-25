@@ -1,35 +1,66 @@
 import { useState, useCallback } from "react";
 
-interface UsePlaygroundReturn {
-  isOpen: boolean;
-  openPlayground: () => void;
-  closePlayground: () => void;
-  togglePlayground: () => void;
+interface PlaygroundSettings {
+  designType: string;
+  roomType: string;
+  roomStyle: string;
+  styles: string;
+  images: number;
+  geometry: number;
+  prompt: string;
 }
 
-/**
- * Custom hook for managing playground modal state
- * Provides methods to open, close, and toggle the playground
- */
+export interface UsePlaygroundReturn {
+  settings: PlaygroundSettings;
+  updateSetting: <K extends keyof PlaygroundSettings>(
+    key: K,
+    value: PlaygroundSettings[K]
+  ) => void;
+  resetSettings: () => void;
+  isGenerating: boolean;
+  setGenerating: (generating: boolean) => void;
+}
+
+const defaultSettings: PlaygroundSettings = {
+  designType: "Drawing",
+  roomType: "Living Room",
+  roomStyle: "Modern",
+  styles: "Realistic",
+  images: 2,
+  geometry: 45,
+  prompt: "",
+};
+
 export const usePlayground = (): UsePlaygroundReturn => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [settings, setSettings] = useState<PlaygroundSettings>(defaultSettings);
+  const [isGenerating, setIsGenerating] = useState(false);
 
-  const openPlayground = useCallback(() => {
-    setIsOpen(true);
+  const updateSetting = useCallback(
+    <K extends keyof PlaygroundSettings>(
+      key: K,
+      value: PlaygroundSettings[K]
+    ) => {
+      setSettings((prev) => ({
+        ...prev,
+        [key]: value,
+      }));
+    },
+    []
+  );
+
+  const resetSettings = useCallback(() => {
+    setSettings(defaultSettings);
   }, []);
 
-  const closePlayground = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const togglePlayground = useCallback(() => {
-    setIsOpen((prev) => !prev);
+  const setGenerating = useCallback((generating: boolean) => {
+    setIsGenerating(generating);
   }, []);
 
   return {
-    isOpen,
-    openPlayground,
-    closePlayground,
-    togglePlayground,
+    settings,
+    updateSetting,
+    resetSettings,
+    isGenerating,
+    setGenerating,
   };
 };

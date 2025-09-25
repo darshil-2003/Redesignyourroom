@@ -64,3 +64,110 @@ html {
   will-change: transform;
   animation-fill-mode: both;
 }
+
+/* Playground specific styles */
+.playground-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.playground-input-section {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.playground-image-section {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+}
+
+/* Custom scrollbar for playground */
+.playground-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.playground-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.playground-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.playground-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth transitions for interactive elements */
+.playground-interactive {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.playground-interactive:hover {
+  transform: translateY(-1px);
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Playground specific overrides for Figma design match */
+.playground-container {
+  background: #000319 !important;
+}
+
+.playground-input-section {
+  background: rgba(0, 0, 0, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.playground-image-section {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  ) !important;
+}
+
+/* Ensure proper font rendering */
+.font-lexend {
+  font-family: "Lexend", system-ui, sans-serif;
+}
+
+.font-manrope {
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+/* Custom scrollbar for playground */
+.playground-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.playground-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.playground-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.playground-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

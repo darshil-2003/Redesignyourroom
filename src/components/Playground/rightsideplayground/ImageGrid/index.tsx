@@ -2,14 +2,32 @@ import React from "react";
 import ImageCard from "../ImageCard";
 
 const ImageGrid = () => {
-  // Sample image URLs - replace with actual generated images
+  // Generated AI interior design images with their specific upscaler overlays
   const images = [
-    "http://localhost:3845/assets/b10b643a496acfcde694a1dc393f41e1bde3f778.png",
-    "http://localhost:3845/assets/eaab829bac87c1c9372148d281240fe3e12a198b.png",
-    "http://localhost:3845/assets/8a69be43765bf2a907a2d1128ce3a788495b6c7f.png",
-    "http://localhost:3845/assets/79f12964b6988996a5d7d661dd19ab7f5de5aaab.png",
-    "http://localhost:3845/assets/5a618e438dc7c7f1b8ff004b68f3174b414f5f55.png",
-    "http://localhost:3845/assets/a47ee61d3a4b4dea63207eb88896f16513e20171.png",
+    {
+      main: "/images/generated-1.png",
+      upscaler: "/images/upscaler-overlay.png",
+    },
+    {
+      main: "/images/generated-2.png",
+      upscaler: "/images/upscaler-overlay-1.png",
+    },
+    {
+      main: "/images/generated-3.png",
+      upscaler: "/images/upscaler-overlay-2.png",
+    },
+    {
+      main: "/images/generated-4.png",
+      upscaler: "/images/upscaler-overlay-3.png",
+    },
+    {
+      main: "/images/generated-5.png",
+      upscaler: "/images/upscaler-overlay-4.png",
+    },
+    {
+      main: "/images/generated-6.png",
+      upscaler: "/images/upscaler-overlay-5.png",
+    },
   ];
 
   return (
@@ -17,16 +35,40 @@ const ImageGrid = () => {
       <div className="content-stretch flex flex-col gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center relative shrink-0 w-full">
         {/* First Row */}
         <div className="content-stretch flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center justify-center relative shrink-0 w-full">
-          <ImageCard imageUrl={images[0]} hasUpscaler={true} />
-          <ImageCard imageUrl={images[1]} hasUpscaler={true} />
-          <ImageCard imageUrl={images[2]} hasUpscaler={true} />
+          <ImageCard
+            imageUrl={images[0].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[0].upscaler}
+          />
+          <ImageCard
+            imageUrl={images[1].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[1].upscaler}
+          />
+          <ImageCard
+            imageUrl={images[2].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[2].upscaler}
+          />
         </div>
 
         {/* Second Row */}
         <div className="content-stretch flex flex-col sm:flex-row gap-[8px] sm:gap-[12px] md:gap-[16px] lg:gap-[24px] items-center justify-center relative shrink-0 w-full">
-          <ImageCard imageUrl={images[3]} hasUpscaler={true} />
-          <ImageCard imageUrl={images[4]} hasUpscaler={true} />
-          <ImageCard imageUrl={images[5]} hasUpscaler={true} />
+          <ImageCard
+            imageUrl={images[3].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[3].upscaler}
+          />
+          <ImageCard
+            imageUrl={images[4].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[4].upscaler}
+          />
+          <ImageCard
+            imageUrl={images[5].main}
+            hasUpscaler={true}
+            upscalerOverlay={images[5].upscaler}
+          />
         </div>
       </div>
     </div>

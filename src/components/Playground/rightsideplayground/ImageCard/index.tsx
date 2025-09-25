@@ -3,11 +3,13 @@ import React from "react";
 interface ImageCardProps {
   imageUrl: string;
   hasUpscaler?: boolean;
+  upscalerOverlay?: string;
 }
 
 const ImageCard: React.FC<ImageCardProps> = ({
   imageUrl,
   hasUpscaler = false,
+  upscalerOverlay,
 }) => {
   return (
     <div className="h-[150px] sm:h-[200px] md:h-[240px] lg:h-[280px] xl:h-[346px] relative rounded-[12px] sm:rounded-[14px] md:rounded-[16px] lg:rounded-[20px] xl:rounded-[24px] shrink-0 w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[420px]">
@@ -28,7 +30,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
               <img
                 alt="Upscaled version"
                 className="absolute h-full left-[-124.07%] max-w-none top-0 w-[248.14%] object-cover"
-                src={imageUrl}
+                src={upscalerOverlay || "/images/upscaler-overlay.png"}
               />
             </div>
             <div

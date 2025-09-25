@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { DropDownIcon } from "../../icons";
+import { DropDownIcon, FAQUpArrowIcon } from "../../icons";
 import { useAccordion } from "../../hooks";
 
 const FAQ = () => {
-  const { openItems, toggleItem, isOpen } = useAccordion(7, {
+  const { openItems, toggleItem, isOpen } = useAccordion(8, {
     allowMultiple: true,
   });
 
@@ -69,54 +69,39 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* FAQ Items with fixed height containers */}
+        {/* FAQ Items */}
         <div className="space-y-0">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-b border-[rgba(228,232,239,0.1)] py-4 md:py-6"
-              style={{
-                position: "relative",
-                minHeight: "60px", // Reduced for mobile
-              }}
+              className="border-b border-[rgba(228,232,239,0.1)] overflow-hidden"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200"
+                className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200 py-4 md:py-6"
               >
                 <h3 className="text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['SF_Pro'] text-white leading-[22px] sm:leading-[24px] md:leading-[28px] pr-2 sm:pr-4">
                   {faq.question}
                 </h3>
-                <div className="flex-shrink-0">
-                  <DropDownIcon
-                    className={`w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform duration-300 ease-in-out ${
-                      isOpen(index) ? "rotate-45" : "rotate-0"
-                    }`}
-                  />
+                <div
+                  className="flex-shrink-0 transition-transform duration-300 ease-in-out"
+                  style={{
+                    transform: isOpen(index)
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                  }}
+                >
+                  <DropDownIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
               </button>
 
-              {/* Content with absolute positioning to prevent layout shifts */}
+              {/* Content with proper accordion animation */}
               <div
-                className="absolute left-0 right-0 z-10"
-                style={{
-                  top: "100%",
-                  backgroundColor: "#000319", // Match section background
-                  padding: "12px 0 md:16px 0",
-                  opacity: isOpen(index) ? 1 : 0,
-                  visibility: isOpen(index) ? "visible" : "hidden",
-                  transition:
-                    "opacity 0.3s ease-in-out, visibility 0.3s ease-in-out",
-                  transform: isOpen(index)
-                    ? "translateY(0)"
-                    : "translateY(-10px)",
-                  transitionProperty: "opacity, visibility, transform",
-                  transitionDuration: "0.3s, 0.3s, 0.3s",
-                  transitionTimingFunction:
-                    "ease-in-out, ease-in-out, ease-in-out",
-                }}
+                className={`transition-all duration-300 ease-in-out ${
+                  isOpen(index) ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                }`}
               >
-                <div className="pt-3 md:pt-4 pr-4 sm:pr-6 md:pr-8 pb-2">
+                <div className="pt-0 pb-4 md:pb-6 pr-4 sm:pr-6 md:pr-8">
                   <p className="text-[13px] sm:text-[14px] md:text-[16px] font-normal font-['Manrope'] text-white/70 leading-[20px] sm:leading-[22px] md:leading-[24px]">
                     {faq.answer}
                   </p>

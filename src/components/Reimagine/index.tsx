@@ -54,7 +54,7 @@ const Reimagine = () => {
               {/* Before Image (Full Background) */}
               <div className="absolute inset-0">
                 <img
-                  src="/images/reimagine-before.png"
+                  src="/images/reimagine-after.png"
                   alt="Before"
                   className="w-full h-full object-cover"
                 />
@@ -69,7 +69,7 @@ const Reimagine = () => {
                 }}
               >
                 <img
-                  src="/images/reimagine-after.png"
+                  src="/images/reimagineo-before.png"
                   alt="After"
                   className="w-full h-full object-cover"
                 />

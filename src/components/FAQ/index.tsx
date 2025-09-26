@@ -60,7 +60,7 @@ const FAQ = () => {
       <div className="max-w-[800px] mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal font-['Lexend'] text-white leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[66px] mb-4">
+          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] font-normal font-['SF Pro'] text-white leading-[36px] sm:leading-[44px] md:leading-[56px] lg:leading-[66px] mb-4">
             We've Got You Covered
           </h2>
           <p className="text-[14px] sm:text-[16px] md:text-[18px] font-normal font-['Manrope'] text-white/50 leading-normal tracking-[0.28px] sm:tracking-[0.32px] md:tracking-[0.36px] max-w-[300px] sm:max-w-[500px] md:max-w-[700px] lg:max-w-[1070px] mx-auto">
@@ -80,7 +80,7 @@ const FAQ = () => {
                 onClick={() => toggleItem(index)}
                 className="w-full flex items-center justify-between text-left hover:opacity-80 transition-opacity duration-200 py-4 md:py-6"
               >
-                <h3 className="text-[14px] sm:text-[15px] md:text-[16px] font-medium font-['SF_Pro'] text-white leading-[22px] sm:leading-[24px] md:leading-[28px] pr-2 sm:pr-4">
+                <h3 className="text-white font-['SF_Pro'] text-[16px] font-medium leading-[28px] pr-2 sm:pr-4">
                   {faq.question}
                 </h3>
                 <div

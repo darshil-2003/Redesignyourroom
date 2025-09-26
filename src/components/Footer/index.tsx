@@ -1,53 +1,79 @@
 "use client";
 
 import React from "react";
-import { FooterLogoIcon } from "../../icons";
+import { LogoIcon } from "../../icons";
+import { useActiveSection } from "../../hooks/useActiveSection";
 
 const Footer = () => {
+  const activeSection = useActiveSection();
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+    }
+  };
+
   return (
-    <footer className="bg-[#000319] border-t border-white/12 py-8 md:py-12">
-      <div className="container-responsive">
+    <footer className="bg-[#000319] border-t border-white/12 flex flex-col items-start gap-8 self-stretch py-6 px-4 sm:px-8 md:px-16 lg:px-[222px]">
+      <div className="w-full">
         {/* Logo */}
-        <div className="flex items-center gap-3 mb-8 md:mb-10">
-          <FooterLogoIcon className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="text-white text-2xl md:text-3xl font-semibold font-['Epilogue']">
-            Interior AI
+        <div className="flex items-center justify-center lg:justify-start gap-[8px] mb-4 sm:mb-6">
+          <LogoIcon className="w-6 h-6 sm:w-8 sm:h-8" />
+          <span className="text-white text-lg sm:text-xl md:text-2xl lg:text-[26px] font-semibold font-['Epilogue']">
+            Redesignyourroom
           </span>
         </div>
 
         {/* Navigation and Copyright */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8">
           {/* Navigation */}
-          <nav className="backdrop-blur-[22px] flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12 rounded-full px-6 py-3">
-            <a
-              href="#home"
-              className="text-white text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors"
+          <nav className="backdrop-blur-[22px] flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 rounded-full px-4 sm:px-6 py-2 sm:py-3">
+            <button
+              onClick={() => handleNavigation("#home")}
+              className={`text-sm sm:text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors ${
+                activeSection === "home" ? "text-white" : "text-white/60"
+              }`}
             >
               Home
-            </a>
-            <a
-              href="#how-it-works"
-              className="text-white/60 text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors"
+            </button>
+            <button
+              onClick={() => handleNavigation("#how-it-works")}
+              className={`text-sm sm:text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors ${
+                activeSection === "how-it-works"
+                  ? "text-white"
+                  : "text-white/60"
+              }`}
             >
               How It Works
-            </a>
-            <a
-              href="#features"
-              className="text-white/60 text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors"
+            </button>
+            <button
+              onClick={() => handleNavigation("#features")}
+              className={`text-sm sm:text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors ${
+                activeSection === "features" ? "text-white" : "text-white/60"
+              }`}
             >
               Features
-            </a>
-            <a
-              href="#faq"
-              className="text-white/60 text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors"
+            </button>
+            <button
+              onClick={() => handleNavigation("#faq")}
+              className={`text-sm sm:text-base md:text-lg font-normal font-['Lexend'] hover:text-white/80 transition-colors ${
+                activeSection === "faq" ? "text-white" : "text-white/60"
+              }`}
             >
               FAQ
-            </a>
+            </button>
           </nav>
 
           {/* Copyright */}
-          <div className="backdrop-blur-[22px] rounded-full px-6 py-3">
-            <p className="text-white/60 text-sm md:text-base font-normal font-['Lexend'] text-center md:text-left">
+          <div className="backdrop-blur-[22px] rounded-full px-4 sm:px-6 py-2 sm:py-3">
+            <p className="text-white/60 text-xs sm:text-sm md:text-base font-normal font-['Lexend'] text-center lg:text-left">
               Copyright 2025 © Interior AI
             </p>
           </div>

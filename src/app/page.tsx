@@ -20,16 +20,24 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#000319] overflow-x-hidden relative h-full ">
+    <div className="min-h-screen relative bg-[#000319] overflow-x-hidden   h-full ">
       <Header onOpenPlayground={handleOpenPlayground} />
-      <main className="w-full">
-        <Hero onOpenPlayground={handleOpenPlayground} />
+      <main className="w-full pt-16 md:pt-20">
+        <section id="home">
+          <Hero onOpenPlayground={handleOpenPlayground} />
+        </section>
         <BeforeAfter />
         <Reimagine />
-        <HowItWorks />
-        <Features />
+        <section id="how-it-works">
+          <HowItWorks />
+        </section>
+        <section id="features">
+          <Features />
+        </section>
         <Inspirations />
-        <FAQ />
+        <section id="faq">
+          <FAQ />
+        </section>
       </main>
       <Footer />
     </div>

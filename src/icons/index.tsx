@@ -1,30 +1,140 @@
 import React from "react";
 
 // Logo Icon
-export const LogoIcon = ({
-  className = "w-10 h-10",
-}: {
-  className?: string;
-}) => (
-  <div className={`${className} relative`}>
-    <div className="w-full h-full bg-[#141c5d] rounded-[10.92px] relative overflow-hidden">
-      <img
-        src="/images/vector-112.svg"
-        alt="Logo vector 1"
-        className="absolute top-[-10px] left-[12px] w-[44px] h-[62px] opacity-80"
+export const LogoIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
+  <svg
+    width="42"
+    height="42"
+    viewBox="0 0 42 42"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <g clip-path="url(#clip0_406_85)">
+      <rect width="42" height="42" rx="12" fill="#141C5D" />
+      <g filter="url(#filter0_i_406_85)">
+        <g clip-path="url(#clip1_406_85)">
+          <rect width="42" height="42" rx="6" fill="#141C5D" />
+          <g style={{ mixBlendMode: "screen" }} filter="url(#filter1_f_406_85)">
+            <path
+              d="M12.2505 20.9999L43.313 -10.0626L56.2192 -1.09384L38.5005 24.7187L43.313 52.0624L12.2505 20.9999Z"
+              fill="#141C5D"
+            />
+          </g>
+          <g style={{ mixBlendMode: "screen" }} filter="url(#filter2_f_406_85)">
+            <path
+              d="M1.96366 63.2342L-9.40601 20.802L4.81428 14.1092L18.3092 42.3604L44.3958 51.8645L1.96366 63.2342Z"
+              fill="#141C5D"
+            />
+          </g>
+        </g>
+      </g>
+      <path
+        d="M17.9368 18.306C18.4064 18.2744 18.9105 18.3872 19.32 18.6202C19.5439 18.7477 19.7505 18.9198 19.9575 19.0738L21.0451 19.8889L24.3543 22.3629L32.1456 28.2301C32.5634 28.5455 32.9856 28.8554 33.3899 29.1884L25.0824 29.1882C24.6462 28.8358 24.2053 28.4894 23.7596 28.1491L18.4373 24.0231C17.8958 25.7357 17.4438 27.4773 16.8975 29.1884L12.3899 29.19C12.5214 28.6329 12.7181 28.0845 12.8814 27.5355C13.2463 26.3089 13.6182 25.0845 13.9971 23.8621L14.6372 21.7078C14.7625 21.2828 14.8753 20.8426 15.0391 20.4311C15.1735 20.0935 15.3729 19.7565 15.6109 19.4814C16.2016 18.7968 17.0376 18.3743 17.9368 18.306Z"
+        fill="white"
       />
-      <img
-        src="/images/vector-113.svg"
-        alt="Logo vector 2"
-        className="absolute top-[48px] left-[-25px] w-[76px] h-[69px] opacity-80 transform rotate-[300deg]"
+      <path
+        d="M12.4227 13.2361C12.7659 13.2233 13.1133 13.2345 13.4568 13.2345L26.0378 13.2349C26.4044 13.2349 26.7666 13.2328 27.1305 13.2835C28.429 13.4646 29.6792 14.1163 30.4737 15.1826C31.2263 16.1924 31.5482 17.4617 31.3678 18.7102C31.2183 19.7867 30.7261 20.7857 29.9648 21.5581C29.7595 21.7635 29.5329 21.9426 29.3011 22.1162C28.2853 22.8051 27.2392 23.0495 26.0224 23.0525C26.0917 22.8047 26.1743 22.5598 26.2497 22.3136L26.723 20.7818C26.8851 20.2669 27.2157 19.3717 27.2196 18.8623C27.2225 18.5111 27.1157 18.1385 26.8637 17.8848C26.6653 17.6851 26.4237 17.5577 26.1468 17.5131C25.8262 17.4614 25.4788 17.4844 25.1547 17.4847L23.5604 17.4871L17.9777 17.4876C17.8422 17.3977 17.7139 17.2866 17.584 17.1877L16.7758 16.571L13.1997 13.8497C12.957 13.6674 12.6328 13.4473 12.4227 13.2361Z"
+        fill="white"
       />
-      <img
-        src="/images/vector.svg"
-        alt="Logo main"
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[23px] h-[25px]"
-      />
-    </div>
-  </div>
+    </g>
+    <rect
+      x="0.21"
+      y="0.21"
+      width="41.58"
+      height="41.58"
+      rx="11.79"
+      stroke="white"
+      strokeOpacity="0.4"
+      strokeWidth="0.42"
+      style={{ mixBlendMode: "soft-light" }}
+    />
+    <defs>
+      <filter
+        id="filter0_i_406_85"
+        x="0"
+        y="0"
+        width="42"
+        height="42"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset />
+        <feGaussianBlur stdDeviation="3.5" />
+        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.2 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="shape"
+          result="effect1_innerShadow_406_85"
+        />
+      </filter>
+      <filter
+        id="filter1_f_406_85"
+        x="-8.74951"
+        y="-31.0626"
+        width="85.9688"
+        height="104.125"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="10.5"
+          result="effect1_foregroundBlur_406_85"
+        />
+      </filter>
+      <filter
+        id="filter2_f_406_85"
+        x="-30.406"
+        y="-6.89076"
+        width="95.8018"
+        height="91.1249"
+        filterUnits="userSpaceOnUse"
+        color-interpolation-filters="sRGB"
+      >
+        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="BackgroundImageFix"
+          result="shape"
+        />
+        <feGaussianBlur
+          stdDeviation="10.5"
+          result="effect1_foregroundBlur_406_85"
+        />
+      </filter>
+      <clipPath id="clip0_406_85">
+        <rect width="42" height="42" rx="12" fill="white" />
+      </clipPath>
+      <clipPath id="clip1_406_85">
+        <rect width="42" height="42" rx="6" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
 );
 
 // Plus Icon for FAQ
@@ -552,7 +662,6 @@ export const HistoryIcon = ({
   className?: string;
 }) => (
   <svg
-    className={className}
     width="24"
     height="24"
     viewBox="0 0 24 24"
@@ -561,15 +670,15 @@ export const HistoryIcon = ({
   >
     <path
       d="M12.6289 5.90039C13.0335 5.9006 13.3572 6.23573 13.3574 6.64453V12.0781L16.8096 14.7598L16.8672 14.8086C17.1378 15.0647 17.1799 15.4931 16.9551 15.8008C16.714 16.1306 16.2565 16.1985 15.9336 15.9502L12.1621 13.0479L12.1592 13.0459C11.9973 12.9121 11.9004 12.6888 11.9004 12.4492V6.64453C11.9006 6.23561 12.2241 5.90039 12.6289 5.90039Z"
-      fill="white"
+      fill="black"
       stroke="black"
-      strokeWidth="0.2"
+      stroke-width="0.2"
     />
     <path
       d="M13.1562 1.90039C18.6493 1.90039 23.0994 6.42279 23.0996 11.999C23.0996 17.5752 18.6501 22.0974 13.1572 22.0977L13.1582 22.0986C10.0611 22.1501 7.13521 20.6605 5.32227 18.1104L5.32129 18.1094C5.08013 17.765 5.15926 17.2868 5.49902 17.041C5.83961 16.7947 6.31147 16.8766 6.55371 17.2207C8.08414 19.3647 10.55 20.6135 13.1553 20.5654H13.1562C17.2897 20.5661 20.8161 17.5207 21.4795 13.373C22.2264 8.70183 19.1042 4.3024 14.5098 3.54395C10.0219 2.80314 5.78569 5.81 4.89551 10.3037L5.07227 10.123H5.07324C5.36867 9.82293 5.8491 9.82293 6.14453 10.123C6.43857 10.4222 6.43865 10.9069 6.14453 11.2061L4.50391 12.873C4.39816 12.9812 4.26348 13.054 4.11816 13.084L3.96973 13.0996H3.89355V13.0986C3.66794 13.0744 3.46491 12.9484 3.34082 12.7568V12.7559L2.0293 10.7578C1.79637 10.4071 1.8871 9.93082 2.2334 9.69336C2.58069 9.45547 3.05153 9.54914 3.28516 9.90039V9.90137L3.39844 10.0723C4.30297 5.33988 8.38502 1.90061 13.1562 1.90039Z"
-      fill="white"
-      stroke="white"
-      strokeWidth="0.2"
+      fill="black"
+      stroke="black"
+      stroke-width="0.2"
     />
   </svg>
 );
@@ -591,6 +700,37 @@ export const RightArrowIcon = ({
       stroke="white"
       strokeOpacity="0.5"
       strokeWidth="1.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const ArrowIcon = ({
+  className = "w-4 h-4",
+}: {
+  className?: string;
+}) => (
+  <svg
+    width="17"
+    height="16"
+    viewBox="0 0 17 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="M10.1199 3.95332L14.1665 7.99999L10.1199 12.0467"
+      stroke="black"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.83325 8H14.0533"
+      stroke="black"
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
       strokeLinecap="round"
       strokeLinejoin="round"
     />

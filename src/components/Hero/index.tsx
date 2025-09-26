@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ArrowIcon } from "../../icons";
 
 interface HeroProps {
   onOpenPlayground: () => void;
@@ -67,9 +68,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenPlayground }) => {
           {/* CTA Button */}
           <button
             onClick={onOpenPlayground}
-            className="bg-gradient-to-r from-[rgba(53,59,102,1)] via-[rgba(39,44,75,1)] to-[rgba(25,28,48,1)] text-white text-base sm:text-lg font-medium font-['Lexend'] px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:opacity-90 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-scale-in animate-delay-400 hover-lift"
+            className="bg-white text-black text-base sm:text-lg font-medium font-['Lexend'] px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-gray-100 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-scale-in animate-delay-400 hover-lift flex items-center gap-2"
           >
             Try AI For Interior Design
+            <ArrowIcon className="w-4 h-4" />
           </button>
         </div>
       </div>

@@ -1,3 +1,5 @@
+/* SF Pro Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -27,7 +29,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lexend), system-ui, sans-serif;
+  font-family: "Inter", "SF Pro", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -330,6 +333,17 @@ html {
   font-family: "Manrope", system-ui, sans-serif;
 }
 
+.font-sf-pro {
+  font-family: "Inter", "SF Pro", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+}
+
+/* Global font override */
+* {
+  font-family: "Inter", "SF Pro", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+}
+
 /* Custom scrollbar for playground */
 .playground-scroll::-webkit-scrollbar {
   width: 4px;
@@ -347,4 +361,129 @@ html {
 
 .playground-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile menu slide in animation */
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-slide {
+  animation: slideInFromTop 0.4s ease-out forwards;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+/* Enhanced Mobile Header Styles */
+.mobile-menu-overlay {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Side-sliding mobile menu */
+.mobile-menu-slide {
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.mobile-menu-slide.open {
+  transform: translateX(0);
+}
+
+/* Enhanced scroll lock for mobile menu */
+body.mobile-menu-open {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* Smooth transitions for mobile menu */
+.mobile-menu-transition {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    visibility 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Enhanced hamburger menu animation */
+.hamburger-line {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+/* Header backdrop blur enhancement */
+.header-backdrop {
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+/* Mobile menu backdrop with enhanced blur */
+.mobile-menu-backdrop {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Side menu specific styles */
+.side-menu {
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+/* Menu item hover effects */
+.menu-item {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.menu-item:hover::before {
+  left: 100%;
+}
+
+/* Enhanced button animations */
+.cta-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile menu close button */
+.close-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
 }

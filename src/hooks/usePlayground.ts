@@ -19,6 +19,8 @@ export interface UsePlaygroundReturn {
   resetSettings: () => void;
   isGenerating: boolean;
   setGenerating: (generating: boolean) => void;
+  openDropdown: string | null;
+  setOpenDropdown: (dropdown: string | null) => void;
 }
 
 const defaultSettings: PlaygroundSettings = {
@@ -34,6 +36,7 @@ const defaultSettings: PlaygroundSettings = {
 export const usePlayground = (): UsePlaygroundReturn => {
   const [settings, setSettings] = useState<PlaygroundSettings>(defaultSettings);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const updateSetting = useCallback(
     <K extends keyof PlaygroundSettings>(
@@ -62,5 +65,7 @@ export const usePlayground = (): UsePlaygroundReturn => {
     resetSettings,
     isGenerating,
     setGenerating,
+    openDropdown,
+    setOpenDropdown,
   };
 };

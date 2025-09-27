@@ -49,6 +49,15 @@ html {
   padding-right: var(--container-padding-mobile);
 }
 
+/* How It Works specific container */
+.how-it-works-container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: 222px;
+  padding-right: 222px;
+}
+
 @media (min-width: 640px) {
   .container-responsive {
     padding-left: var(--container-padding-tablet);

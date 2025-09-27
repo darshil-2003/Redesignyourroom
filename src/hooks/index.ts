@@ -6,4 +6,5 @@ export { useIntersectionObserver } from "./useIntersectionObserver";
 export { useDebounce } from "./useDebounce";
 export { useImageUpload } from "./useImageUpload";
 export { usePlayground } from "./usePlayground";
+export { useActiveSection } from "./useActiveSection";
 export type { UsePlaygroundReturn } from "./usePlayground";

@@ -19,7 +19,7 @@ const UploadArea: React.FC = () => {
   };
 
   return (
-    <div className="bg-[rgba(255,255,255,0.08)] relative rounded-xl shrink-0 w-full hover:bg-[rgba(255,255,255,0.12)] transition-colors duration-200 h-48 md:h-56 lg:h-64 animate-fade-in-up hover-lift">
+    <div className="bg-[rgba(255,255,255,0.08)] relative rounded-xl shrink-0 w-full hover:bg-[rgba(255,255,255,0.12)] transition-all duration-200 h-48 md:h-56 lg:h-64 animate-fade-in-up hover-lift hover:scale-[1.02] hover:shadow-lg">
       {imagePreview ? (
         <div className="relative w-full h-full rounded-xl overflow-hidden">
           <img

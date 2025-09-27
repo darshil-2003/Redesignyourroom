@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { LineIcon } from "../../icons";
 
 const HowItWorks = () => {
   const steps = [
@@ -26,8 +25,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="bg-[#000319] section-responsive">
-      <div className="container-responsive">
+    <section className="bg-[#000319] section-responsive ">
+      <div className="how-it-works-container ">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal font-['Lexend'] text-white leading-tight mb-6 animate-fade-in-up">
@@ -41,13 +40,13 @@ const HowItWorks = () => {
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-10 relative">
           {steps.map((step, index) => (
             <div
               key={step.number}
               className={`flex flex-col items-center text-center group animate-fade-in-up animate-delay-${
                 (index + 1) * 100
-              } hover-lift`}
+              } hover-lift relative`}
             >
               {/* Step Number */}
               <div className="bg-white/10 border border-white/20 rounded-xl md:rounded-2xl w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-6 md:mb-8 group-hover:bg-white/15 transition-all duration-300">
@@ -57,32 +56,18 @@ const HowItWorks = () => {
               </div>
 
               {/* Step Content */}
-              <div className="flex flex-col gap-4 md:gap-6">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-medium font-['Lexend'] text-white leading-tight">
+              <div className="flex flex-col gap-4 md:gap-6 w-full max-w-xs">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-medium font-['Lexend'] text-white leading-tight text-center">
                   {step.title}
                 </h3>
-                <p className="text-sm sm:text-base md:text-lg font-normal font-['Manrope'] text-white/50 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg font-normal font-['Manrope'] text-white/50 leading-relaxed text-center">
                   {step.description}
                 </p>
               </div>
 
-              {/* Separator Arrow - Hidden on mobile, visible on desktop */}
+              {/* Separator Line - Hidden on mobile, visible on desktop */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-8 transform -translate-y-1/2">
-                  <svg
-                    className="w-6 h-6 text-white/30"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
+                <div className="hidden md:block absolute top-1/2 -right-35 transform -translate-y-1/2 w-[246px] h-px -rotate-90 self-stretch bg-gradient-to-r from-transparent via-[rgba(235,240,255,0.24)] to-transparent "></div>
               )}
             </div>
           ))}

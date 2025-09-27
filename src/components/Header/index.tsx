@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { LogoIcon } from "../../icons";
+import { useActiveSection } from "../../hooks/useActiveSection";
 
 interface HeaderProps {
   onOpenPlayground: () => void;
@@ -10,9 +11,11 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const isPlaygroundPage = pathname === "/playground";
+  const activeSection = useActiveSection();
 
   const handleNavigation = (href: string) => {
     if (href.startsWith("#")) {
@@ -28,6 +31,32 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
     }
     setIsMenuOpen(false);
   };
+
+  // Check if device is mobile (not tablet)
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const width = window.innerWidth;
+      // Only consider it mobile if width is less than 768px (not tablet)
+      setIsMobile(width < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  // Control body scroll when menu is open - ONLY on mobile devices
+  useEffect(() => {
+    if (isMenuOpen && isMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen, isMobile]);
 
   return (
     <div>
@@ -48,7 +77,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                 onClick={() =>
                   handleNavigation(isPlaygroundPage ? "/" : "#home")
                 }
-                className="text-white text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors ${
+                  activeSection === "home" ? "text-white" : "text-white/60"
+                }`}
               >
                 Home
               </button>
@@ -58,7 +89,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                     isPlaygroundPage ? "/#how-it-works" : "#how-it-works"
                   )
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors ${
+                  activeSection === "how-it-works"
+                    ? "text-white"
+                    : "text-white/60"
+                }`}
               >
                 How It Works
               </button>
@@ -68,7 +103,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                     isPlaygroundPage ? "/#features" : "#features"
                   )
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors ${
+                  activeSection === "features" ? "text-white" : "text-white/60"
+                }`}
               >
                 Features
               </button>
@@ -76,7 +113,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                 onClick={() =>
                   handleNavigation(isPlaygroundPage ? "/#faq" : "#faq")
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors ${
+                  activeSection === "faq" ? "text-white" : "text-white/60"
+                }`}
               >
                 FAQ
               </button>
@@ -130,7 +169,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                 onClick={() =>
                   handleNavigation(isPlaygroundPage ? "/" : "#home")
                 }
-                className="text-white text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left ${
+                  activeSection === "home" ? "text-white" : "text-white/60"
+                }`}
               >
                 Home
               </button>
@@ -140,7 +181,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                     isPlaygroundPage ? "/#how-it-works" : "#how-it-works"
                   )
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left ${
+                  activeSection === "how-it-works"
+                    ? "text-white"
+                    : "text-white/60"
+                }`}
               >
                 How It Works
               </button>
@@ -150,7 +195,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                     isPlaygroundPage ? "/#features" : "#features"
                   )
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left ${
+                  activeSection === "features" ? "text-white" : "text-white/60"
+                }`}
               >
                 Features
               </button>
@@ -158,7 +205,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenPlayground }) => {
                 onClick={() =>
                   handleNavigation(isPlaygroundPage ? "/#faq" : "#faq")
                 }
-                className="text-white/60 text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left"
+                className={`text-[18px] font-normal font-['Lexend'] leading-[22px] hover:text-white/80 transition-colors text-left ${
+                  activeSection === "faq" ? "text-white" : "text-white/60"
+                }`}
               >
                 FAQ
               </button>

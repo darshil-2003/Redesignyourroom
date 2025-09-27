@@ -20,7 +20,7 @@ const PlaygroundHeader: React.FC = () => {
   const backgroundOpacity = Math.min(0.1 + scrollY * 0.002, 0.6);
   return (
     <div
-      className="backdrop-blur-[50px] backdrop-filter bg-[rgba(0,0,0,0.1)] flex h-16 md:h-20 items-center justify-between px-4 md:px-6 py-0 fixed top-0 left-0 right-0 z-50 rounded-tl-xl shrink-0 w-full"
+      className="backdrop-blur-[50px] backdrop-filter bg-[rgba(0,0,0,0.1)] flex h-16 md:h-20 items-center justify-between px-4 md:px-6 py-0 fixed top-0 left-0 right-0 z-50 shrink-0 w-full"
       style={{
         backdropFilter: `blur(${blurIntensity}px)`,
         backgroundColor: `rgba(0,0,0,${backgroundOpacity})`,
@@ -51,7 +51,7 @@ const PlaygroundHeader: React.FC = () => {
           </div>
         </div>
       </button>
-      <div className="bg-white flex gap-2 h-11 md:h-12 items-center px-4 py-3 relative rounded-xl shrink-0">
+      <div className="bg-white flex gap-2 h-8 md:h-12 items-center px-4 py-3 relative rounded-xl shrink-0 cursor-pointer hover:bg-gray-100 hover:scale-105 transition-all duration-200">
         <div className="relative shrink-0 w-6 h-6">
           <HistoryIcon className="w-6 h-6 text-black" />
         </div>

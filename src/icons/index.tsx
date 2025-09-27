@@ -10,10 +10,10 @@ export const LogoIcon = ({ className = "w-8 h-8" }: { className?: string }) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <g clip-path="url(#clip0_406_85)">
+    <g clipPath="url(#clip0_406_85)">
       <rect width="42" height="42" rx="12" fill="#141C5D" />
       <g filter="url(#filter0_i_406_85)">
-        <g clip-path="url(#clip1_406_85)">
+        <g clipPath="url(#clip1_406_85)">
           <rect width="42" height="42" rx="6" fill="#141C5D" />
           <g style={{ mixBlendMode: "screen" }} filter="url(#filter1_f_406_85)">
             <path

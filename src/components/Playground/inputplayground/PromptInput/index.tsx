@@ -15,11 +15,11 @@ const PromptInput: React.FC<PromptInputProps> = ({ playgroundState }) => {
   };
 
   return (
-    <div className="backdrop-blur-[3px] backdrop-filter flex flex-col gap-3 h-48 md:h-52 lg:h-56 items-start overflow-clip relative rounded-xl shrink-0 w-full animate-fade-in-up animate-delay-100 hover-lift">
+    <div className="backdrop-blur-[3px] backdrop-filter flex flex-col gap-3 h-48 md:h-52 lg:h-56 items-start overflow-clip relative rounded-xl shrink-0 w-full animate-fade-in-up animate-delay-100 hover-lift hover:scale-[1.02] transition-all duration-300">
       <div className="flex flex-col font-['Lexend'] font-medium justify-center leading-none relative shrink-0 text-white text-sm md:text-base text-nowrap">
         <p className="leading-none whitespace-pre">Additional Prompt</p>
       </div>
-      <div className="bg-[rgba(255,255,255,0.08)] flex flex-col gap-3 grow items-start min-h-0 min-w-0 p-4 relative rounded-lg shrink-0 w-full">
+      <div className="bg-[rgba(255,255,255,0.08)] flex flex-col gap-3 grow items-start min-h-0 min-w-0 p-4 relative rounded-lg shrink-0 w-full hover:bg-[rgba(255,255,255,0.12)] transition-colors duration-200">
         <textarea
           value={settings.prompt}
           onChange={handlePromptChange}

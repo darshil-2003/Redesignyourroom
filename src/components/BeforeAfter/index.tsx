@@ -16,28 +16,28 @@ const BeforeAfter = () => {
   ];
 
   const afterImages = [
-    { id: 1, src: "/images/After 1.png", alt: "After 1" },
-    { id: 2, src: "/images/After 2.png", alt: "After 2" },
+    { id: 1, src: "/images/After 2.png", alt: "After 1" },
+    { id: 2, src: "/images/After 4.png", alt: "After 2" },
     { id: 3, src: "/images/After 3.png", alt: "After 3" },
-    { id: 4, src: "/images/After 4.png", alt: "After 4" },
-    { id: 5, src: "/images/After 5.png", alt: "After 5" },
+    { id: 4, src: "/images/After 5.png", alt: "After 4" },
+    { id: 5, src: "/images/After 1.png", alt: "After 5" },
   ];
 
-  // Auto-scroll effect for both carousels - REVERSED FLOW
+  // Auto-scroll effect for both carousels - OPPOSITE DIRECTIONS
   useEffect(() => {
     const interval = setInterval(() => {
       setLeftScrollPosition((prev) => {
-        // Left carousel: images flow from blue line toward left (reversed)
+        // Left carousel: images flow from left toward center line
         const scrollIncrement = 2;
         const maxScroll = 2000;
-        return (prev - scrollIncrement + maxScroll) % maxScroll;
+        return (prev + scrollIncrement) % maxScroll;
       });
 
       setRightScrollPosition((prev) => {
-        // Right carousel: images flow from right toward blue line (reversed)
+        // Right carousel: images flow from right toward center line
         const scrollIncrement = 2;
         const maxScroll = 2000;
-        return (prev - scrollIncrement + maxScroll) % maxScroll;
+        return (prev + scrollIncrement) % maxScroll;
       });
     }, 20);
 

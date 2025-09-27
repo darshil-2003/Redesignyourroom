@@ -53,7 +53,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-16 md:py-24 lg:py-32 px-4 sm:px-6 md:px-12 lg:px-[222px] relative">
+    <section className="bg-[#000319]  py-8 md:py-17 px-4 sm:px-6 md:px-12 lg:px-[222px] relative">
       {/* Background Ray - Removed image, using gradient instead */}
       <div className="absolute -right-[50px] md:-right-[100px] -top-[50px] md:-top-[100px] w-[400px] md:w-[600px] lg:w-[830px] h-[400px] md:h-[600px] lg:h-[816px] bg-gradient-to-bl from-blue-500/10 to-purple-500/10 rounded-full blur-3xl opacity-30" />
 

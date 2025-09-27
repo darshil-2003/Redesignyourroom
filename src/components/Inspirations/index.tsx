@@ -67,16 +67,17 @@ const Inspirations = () => {
   ]; // Row2: 7-11, then 1-6 (offset by 6)
 
   return (
-    <section className="bg-[#000319] py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+    <section className="bg-[#000319] py-8 md:py-17 ">
       {/* Header */}
       <div className="max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[222px] mb-8 sm:mb-12 md:mb-16 lg:mb-20">
         <div className="text-center">
           <h2 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[52px] font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight">
-            Get Inspired
+            Design Ideas Made Simple
           </h2>
-          <p className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-[#B8BCC8] max-w-[600px] mx-auto leading-relaxed">
-            Discover stunning interior designs and transform your space with
-            AI-powered room redesigns
+          <p className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-[#B8BCC8] max-w-[1150px] mx-auto leading-relaxed">
+            Explore curated design styles, color palettes, and layouts tailored
+            to your room. Get inspired with ready-to-use concepts you can
+            preview instantly.
           </p>
         </div>
       </div>

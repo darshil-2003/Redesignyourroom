@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative bg-[#000319] overflow-x-hidden   h-full ">
+    <div className="min-h-screen relative bg-[#000319] overflow-x-hidden  h-full ">
       <Header onOpenPlayground={handleOpenPlayground} />
       <main className="w-full pt-16 md:pt-20">
         <section id="home">
@@ -28,7 +28,7 @@ export default function Home() {
         </section>
         <BeforeAfter />
         <Reimagine />
-        <section id="how-it-works">
+        <section id="how-it-works ">
           <HowItWorks />
         </section>
         <section id="features">
@@ -39,7 +39,9 @@ export default function Home() {
           <FAQ />
         </section>
       </main>
-      <Footer />
+      <div className="py-8 md:py-17">
+        <Footer />
+      </div>
     </div>
   );
 }

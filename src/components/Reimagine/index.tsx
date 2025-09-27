@@ -27,7 +27,7 @@ const Reimagine = () => {
   ];
 
   return (
-    <section className="bg-[#000319] py-0 px-4 sm:px-6 md:px-12 lg:px-[222px]">
+    <section className="bg-[#000319] py-8 md:py-17 px-4 sm:px-6 md:px-12 lg:px-[222px]">
       <div className="max-w-[1476px] mx-auto">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">

@@ -21,7 +21,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#000319] border-t border-white/12 flex flex-col items-start gap-8 self-stretch py-6 px-4 sm:px-8 md:px-16 lg:px-[222px]">
+    <footer className="bg-[#000319] border-t border-white/12 flex flex-col items-start gap-8 self-stretch py-6 px-4 sm:px-8 md:px-16 lg:px-[222px] h-20">
       <div className="w-full">
         {/* Logo */}
         <div className="flex items-center justify-center lg:justify-start gap-[8px] mb-4 sm:mb-6">
